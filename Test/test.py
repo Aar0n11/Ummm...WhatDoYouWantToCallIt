@@ -1,6 +1,7 @@
 import os
 import json
 import time
+from turtle import forward
 import keyboard
 
 path = os.getcwd()
@@ -33,10 +34,12 @@ def move(direction):
             position[0] == position[0] + 5
             time.sleep(processSpeed)
 
+        else:
+            move()
+
+        
+
 keyboard.add_hotkey(settingsData['leftKey'], lambda: move("left"))
 keyboard.add_hotkey(settingsData['rightKey'], lambda: move("right"))
 keyboard.add_hotkey(settingsData['forwardKey'], lambda: move("forward"))
 keyboard.add_hotkey(settingsData['backwardKey'], lambda: move("backward"))
-
-while True:
-    move()
