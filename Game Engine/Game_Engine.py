@@ -1,6 +1,7 @@
 import os
 import json
 import time
+from turtle import forward
 import keyboard
 
 path = os.getcwd()
@@ -15,7 +16,7 @@ def move(key):
         print(key)
         time.sleep(processSpeed)
 
-keyboard.add_hotkey("a", lambda: move("a"))
-keyboard.add_hotkey("d", lambda: move("d"))
-keyboard.add_hotkey("w", lambda: move("w"))
-keyboard.add_hotkey("s", lambda: move("s"))
+keyboard.add_hotkey(settingsData['leftKey'], lambda: move("a"))
+keyboard.add_hotkey(settingsData['rightKey'], lambda: move("d"))
+keyboard.add_hotkey(settingsData['forwardKey'], lambda: move("w"))
+keyboard.add_hotkey(settingsData['backwardKey'], lambda: move("s"))
