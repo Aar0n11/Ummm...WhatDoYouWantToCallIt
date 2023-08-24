@@ -3,14 +3,6 @@ import json
 import time
 import keyboard
 
-
-
-path = os.getcwd()
-parent = os.path.dirname(path)
-
-settings = open(parent + '/settings.json')
-settingsData = json.load(settings)
-
 processSpeed = 0.1
 
 def move(key):
