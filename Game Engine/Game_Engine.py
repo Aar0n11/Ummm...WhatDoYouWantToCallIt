@@ -2,7 +2,7 @@ import subprocess
 import keyboard
 
 def move(key):
-    print(key)
+
 
 keyboard.add_hotkey("a", lambda: move("a"))
 keyboard.add_hotkey("d", lambda: move("d"))
