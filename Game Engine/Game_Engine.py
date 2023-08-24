@@ -9,9 +9,7 @@ parent = os.path.dirname(path)
 settings = open(parent + '\settings.json')
 settingsData = json.load(settings)
 
-print(type(settingsData))
-
-processSpeed = 0.1
+processSpeed = settingsData['speed']
 
 def move(key):
         print(key)
