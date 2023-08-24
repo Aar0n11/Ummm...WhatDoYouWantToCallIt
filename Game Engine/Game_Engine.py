@@ -1,18 +1,10 @@
+import subprocess
 import keyboard
 
-def moveleft():
-    print("a")
+def move(key):
+    print(key)
 
-def moveright():
-    print("d")
-
-def moveup():
-    print("w")
-
-def movedown():
-    print("s")
-
-keyboard.add_hotkey("a", lambda: moveleft())
-keyboard.add_hotkey("d", lambda: moveright())
-keyboard.add_hotkey("w", lambda: moveup())
-keyboard.add_hotkey("s", lambda: movedown())
+keyboard.add_hotkey("a", lambda: move("a"))
+keyboard.add_hotkey("d", lambda: move("d"))
+keyboard.add_hotkey("w", lambda: move("w"))
+keyboard.add_hotkey("s", lambda: move("s"))
