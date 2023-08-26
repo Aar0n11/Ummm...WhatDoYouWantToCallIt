@@ -1,17 +1,22 @@
 import json
-from Game_Engine.py import datafile
+import os
 
-datafile = datafile()
+path = os.getcwd()
+parent = os.path.dirname(path)
 
-def editJson(dataField, newData):
-    with open(datafile, 'r') as file:
+dataFile = parent + '\data.json'
+
+def editThatJson(dataField, newData):
+    with open(dataFile, 'r') as file:
         fileData = json.load(file)
 
-        field = fileData.pop(dataField)
-        fileData[newData] = field
+        fileData.pop(dataField)
+
+        fileData[dataField] = newData
+
 
         newData = json.dumps(fileData)
 
-    with open(datafile, 'w') as file:
+    with open(dataFile, 'w') as file:
         file.truncate(0)
         file.write(newData)
