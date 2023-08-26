@@ -11,3 +11,5 @@ You will see a bunch of coordinates and if you use the controlles you will see t
 The Game Engine folder has things related to the functionality of the game,
 The Test folder will probably never have anything in it but it is for us to test features and functions,
 The images folder houses all the images that will be in the game, including animations, textures and more. (Currently only has the character - a red square)
+
+PS: This Engine is called "Ummm...WhatDoYouWantToCallIt" because we were trying to come up with a name for it and we just kept asking each other that.
