@@ -15,6 +15,8 @@ data = json.load(dataFile)
 processSpeed = settingsData['speed']
 print(processSpeed)
 
+size = [settingsData['width'], settingsData['height']]
+
 position = [0, 0]
 
 def move(direction):
@@ -22,17 +24,29 @@ def move(direction):
             position[1] = position[1] + 5
             time.sleep(processSpeed)
 
+            if(position[1] > size[0]):
+                position[1] = size[0]
+
         elif(direction == "backward"):
             position[1] = position[1] - 5
             time.sleep(processSpeed)
+
+            if(position[1] > (size[0] - (size[0]*2))):
+                position[1] = (size[0] - (size[0]*2))
 
         elif(direction == "left"):
             position[0] = position[0] - 5
             time.sleep(processSpeed)
 
+            if(position[0] > size[1]):
+                position[0] = size[1]
+
         elif(direction == "right"):
             position[0] = position[0] + 5
             time.sleep(processSpeed)
+
+            if(position[0] > (size[1] - (size[1]*2))):
+                position[0] = (size[1] - (size[1]*2))
 
 keyboard.add_hotkey(settingsData['leftKey'], lambda: move("left"))
 keyboard.add_hotkey(settingsData['rightKey'], lambda: move("right"))
