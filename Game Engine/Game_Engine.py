@@ -1,7 +1,12 @@
+from editJson import *
 import os
 import json
 import time
 import keyboard
+
+def datafile():
+    datafile = "data.json"
+    return datafile
 
 path = os.getcwd()
 parent = os.path.dirname(path)
@@ -9,7 +14,7 @@ parent = os.path.dirname(path)
 settings = open(parent + '\settings.json')
 settingsData = json.load(settings)
 
-dataFile = open(parent + '\settings.json')
+dataFile = open(parent + '\data.json')
 data = json.load(dataFile)
 
 processSpeed = settingsData['speed']
@@ -17,7 +22,7 @@ print(processSpeed)
 
 size = [settingsData['width'], settingsData['height']]
 
-position = [0, 0]
+position = [data['charPositionX'], data['charPositionY']]
 
 def move(direction):
         if(direction == "forward"):
@@ -55,4 +60,8 @@ keyboard.add_hotkey(settingsData['backwardKey'], lambda: move("backward"))
 
 while True:
     print(position)
+
+    editJson('charPositionX', position[0])
+    editJson('charPositionY', position[1])
+
     time.sleep(processSpeed)
