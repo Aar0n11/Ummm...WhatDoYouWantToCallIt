@@ -31,22 +31,22 @@ def move(direction):
             position[1] = position[1] - 5
             time.sleep(processSpeed)
 
-            if(position[1] > (size[0] - (size[0]*2))):
+            if(position[1] < (size[0] - (size[0]*2))):
                 position[1] = (size[0] - (size[0]*2))
 
         elif(direction == "left"):
             position[0] = position[0] - 5
             time.sleep(processSpeed)
 
-            if(position[0] > size[1]):
-                position[0] = size[1]
+            if(position[0] < (size[1] - (size[1]*2))):
+                position[0] = (size[1] - (size[1]*2))
 
         elif(direction == "right"):
             position[0] = position[0] + 5
             time.sleep(processSpeed)
 
-            if(position[0] > (size[1] - (size[1]*2))):
-                position[0] = (size[1] - (size[1]*2))
+            if(position[0] > size[1]):
+                position[0] = size[1]    
 
 keyboard.add_hotkey(settingsData['leftKey'], lambda: move("left"))
 keyboard.add_hotkey(settingsData['rightKey'], lambda: move("right"))
@@ -55,4 +55,4 @@ keyboard.add_hotkey(settingsData['backwardKey'], lambda: move("backward"))
 
 while True:
     print(position)
-    time.sleep(0.1)
+    time.sleep(processSpeed)

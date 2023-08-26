@@ -1,6 +1,6 @@
 {
-	"width": "1000",
-	"height": "1000",
+	"width": 1000,
+	"height": 1000,
 	"imageFolder": "./images",
 	"characterPath": "/character.png",
 	"speed": 0.1,
