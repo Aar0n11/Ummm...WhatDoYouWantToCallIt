@@ -14,7 +14,6 @@ def editThatJson(dataField, newData):
 
         fileData[dataField] = newData
 
-
         newData = json.dumps(fileData)
 
     with open(dataFile, 'w') as file:
