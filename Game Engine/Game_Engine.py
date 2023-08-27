@@ -14,7 +14,6 @@ dataFile = open(parent + '\data.json')
 data = json.load(dataFile)
 
 processSpeed = settingsData['speed']
-print(processSpeed)
 
 size = [settingsData['width'], settingsData['height']]
 
