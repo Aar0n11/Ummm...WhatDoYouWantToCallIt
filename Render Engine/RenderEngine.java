@@ -23,7 +23,7 @@ public class RenderEngine extends JPanel{
         	JFrame frame = buildFrame();
 		RenderEngine instance = new RenderEngine();
 
-        	final BufferedImage[] image = {ImageIO.read(new File("bricktest.png"))};
+        	final BufferedImage[] image = {ImageIO.read(new File("images/character.png"))};
 		int[] x = {0};
 		int[] y = {0};
 
