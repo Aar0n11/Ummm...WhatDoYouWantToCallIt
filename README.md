@@ -4,7 +4,6 @@ This is a game engine for 2d top down games.
 You can move with W S A D.
 
 This project is in the pre-alpha stage of development which means you cannot really use it right now.
-The render engine is in progress but not on this repository yet.
 If you want to see what the game engine part does run the Game_Engine.py located in the Game Engine folder.
 You will see a bunch of coordinates and if you use the controls you will see those coordinates change.
 
