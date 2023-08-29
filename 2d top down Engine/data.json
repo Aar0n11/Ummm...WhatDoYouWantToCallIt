@@ -1,0 +1,13 @@
+{
+  "character": [
+    {
+      "charDefaultX": 0,
+      "charDefaultY": 0,
+      "charPositionX": 0,
+      "charPositionY": 0,
+      "height": 100,
+      "width": 100,
+      "state": "idle"
+    }
+  ]
+}

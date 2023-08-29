@@ -23,7 +23,7 @@ public class RenderEngine extends JPanel{
         	JFrame frame = buildFrame();
 		RenderEngine instance = new RenderEngine();
 
-        	final BufferedImage[] image = {ImageIO.read(new File("images/character.png"))};
+        	final BufferedImage[] image = {ImageIO.read(new File("images/character.png"))}; // Error: cannot find image
 		int[] x = {0};
 		int[] y = {0};
 
@@ -55,7 +55,7 @@ public class RenderEngine extends JPanel{
     	private static JFrame buildFrame() {
         	JFrame frame = new JFrame();
         	frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        	frame.setSize(200, 200);
+        	frame.setSize(1000, 1000);
         	frame.setVisible(true);
         	return frame;
     	}

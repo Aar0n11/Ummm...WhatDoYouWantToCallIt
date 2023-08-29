@@ -21,6 +21,9 @@ defaultPosition = [data['charDefaultX'], data['charDefaultY']]
 
 position = [0,0]
 
+playerHeight = data['character']['height']
+playerWidth = data['character']['width']
+
 with open(parent + '\data.json', 'r') as file:
     fileData = json.load(file)
 
@@ -41,30 +44,29 @@ def move(direction):
             position[1] = position[1] + 5
             time.sleep(processSpeed)
 
-            if(position[1] > size[0]):
-                position[1] = size[0]
+            if(position[1] > (size[0] - playerHeight)):
+                position[1] = size[0] - playerHeight
 
         elif(direction == "backward"):
             position[1] = position[1] - 5
             time.sleep(processSpeed)
 
-            if(position[1] < (size[0] - (size[0]*2))):
-                position[1] = (size[0] - (size[0]*2))
+            if(position[1] < (0 - size[0] + playerHeight)):
+                position[1] = (0 - size[0] + playerHeight)
 
         elif(direction == "left"):
             position[0] = position[0] - 5
             time.sleep(processSpeed)
 
-            if(position[0] < (size[1] - (size[1]*2))):
-                position[0] = (size[1] - (size[1]*2))
+            if(position[0] < (0 - size[1] + playerWidth)):
+                position[0] = (0 - size[1] + playerWidth)
 
         elif(direction == "right"):
             position[0] = position[0] + 5
             time.sleep(processSpeed)
 
-            if(position[0] > size[1]):
-                position[0] = size[1]    
-
+            if(position[0] > (size[1] - playerWidth):
+                position[0] = (size[1] - playerWidth)
 keyboard.add_hotkey(settingsData['leftKey'], lambda: move("left"))
 keyboard.add_hotkey(settingsData['rightKey'], lambda: move("right"))
 keyboard.add_hotkey(settingsData['forwardKey'], lambda: move("forward"))
@@ -76,4 +78,5 @@ while True:
     editThatJson('charPositionX', position[0])
     editThatJson('charPositionY', position[1])
 
-    time.sleep(processSpeed)
+   if(processSpeed != 0):
+       time.sleep(processSpeed)
