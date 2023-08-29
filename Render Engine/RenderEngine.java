@@ -1,8 +1,5 @@
 import java.awt.BorderLayout;
 import java.awt.Point;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
 import java.awt.Graphics;
 
 import java.util.ArrayList;
@@ -20,10 +17,11 @@ import java.io.IOException;
 
 public class RenderEngine extends JPanel{
     	public static void main(String[] args) throws IOException {
+		String parent = "";
         	JFrame frame = buildFrame();
 		RenderEngine instance = new RenderEngine();
 
-        	final BufferedImage[] image = {ImageIO.read(new File("images/character.png"))};
+        	final BufferedImage[] image = {ImageIO.read(new File(parent+"images\character.png"))};
 		int[] x = {0};
 		int[] y = {0};
 
@@ -39,7 +37,7 @@ public class RenderEngine extends JPanel{
 		//Main Loop
 		while(true){
 			try {
-  				Thread.sleep(10);
+  				Thread.sleep(1);
 			} catch (InterruptedException e) {
   				Thread.currentThread().interrupt();
 			}
