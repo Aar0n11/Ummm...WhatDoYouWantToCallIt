@@ -1,5 +1,6 @@
 from bin.add_force import addForce
 from bin.editJson import editThatJson
+from copyJson import copyThatJson
 import os
 import json
 import time
@@ -8,10 +9,10 @@ import keyboard
 path = os.getcwd()
 parent = os.path.dirname(path)
 
-settings = open(parent + '\settings.json')
+settings = open('\settings.json')
 settingsData = json.load(settings)
 
-dataFile = open(parent + '\data.json')
+dataFile = open('\data.json')
 data = json.load(dataFile)
 
 processSpeed = settingsData['speed']
@@ -27,18 +28,22 @@ playerWidth = data['character']['width']
 
 playerState = data['character']['state']
 
+gravity = True
+
+canJump = True
+
 def handleSpeed():
     if(processSpeed != 0):
         time.sleep(processSpeed)
 
 def handleState(playerState):
-    if(playerState = "idle"):
+    if(playerState == "idle"):
         canJump = True
 
-    elif(playerState = "jumping"):
+    elif(playerState == "jumping"):
         gravity = False
 
-with open(parent + '\data.json', 'r') as file:
+with open('\data.json', 'r') as file:
     fileData = json.load(file)
 
     fileData.pop('charPositionX')
@@ -49,7 +54,7 @@ with open(parent + '\data.json', 'r') as file:
 
     newData = json.dumps(fileData)
 
-with open(parent + '\data.json', 'w') as file:
+with open('\data.json', 'w') as file:
     file.truncate(0)
     file.write(newData)
 
@@ -65,12 +70,12 @@ def move(direction):
             position[0] = position[0] + 5
             playerState = "running"
 
-            if(position[0] > (size[1] - playerWidth):
+            if(position[0] > (size[1] - playerWidth)):
                 position[0] = (size[1] - playerWidth)
 
         elif(direction == "jump"):
             if(canJump == True):
-                for i in range(10)
+                for i in range(10):
                     position[1] = position[1] + 1
 
         else:
@@ -94,3 +99,5 @@ while True:
 
     if(gravity != False):
         addForce("gravity", 1, "-y", "char")
+
+    copyThatJson()

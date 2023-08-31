@@ -1,4 +1,5 @@
-from editJson import editThatJson
+from bin.spawnEntity import spawnEntity
+from bin.editJson import editThatJson
 import os
 import json
 import time
@@ -65,7 +66,7 @@ def move(direction):
             position[0] = position[0] + 5
             time.sleep(processSpeed)
 
-            if(position[0] > (size[1] - playerWidth):
+            if(position[0] > (size[1] - playerWidth)):
                 position[0] = (size[1] - playerWidth)
 keyboard.add_hotkey(settingsData['leftKey'], lambda: move("left"))
 keyboard.add_hotkey(settingsData['rightKey'], lambda: move("right"))
@@ -78,5 +79,5 @@ while True:
     editThatJson('charPositionX', position[0])
     editThatJson('charPositionY', position[1])
 
-   if(processSpeed != 0):
-       time.sleep(processSpeed)
+    if(processSpeed != 0):
+        time.sleep(processSpeed)

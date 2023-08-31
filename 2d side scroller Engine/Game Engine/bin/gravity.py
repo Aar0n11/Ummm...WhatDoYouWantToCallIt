@@ -3,24 +3,23 @@ import json
 
 path = os.getcwd()
 parent = os.path.dirname(path)
-mainFolder = os.path.dirname(parent)
 
-dataFile = 'mainFolder/settings.json'
+dataFile = parent + '/settings.json'
 data = json.load(dataFile)
 
 position = [data['characterPositionX'], data['characterPositionY']]
 
 def addGravity(speed, direction):
-    if(direction = 'x'):
+    if(direction == 'x'):
         position[0] = position[0] + speed
 
-    elif(direction = 'y'):
+    elif(direction == 'y'):
         position[1] = position[1] + speed
 
-    elif(direction = '-x'):
+    elif(direction == '-x'):
         position[0] = position[0] - speed
 
-    elif(direction = '-y'):
+    elif(direction == '-y'):
         position[1] = position[1] - speed
 
     return(position)
