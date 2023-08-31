@@ -8,8 +8,8 @@ parent = os.path.dirname(path)
 newDataFile = '\Render Engine\Electron\data.json'
 newSettingsFile = '\Render Engine\Electron\settings.json'
 
-dataFile = '\data.json'
-settingsFile = '\settings.json'
+dataFile = 'Game Engine\data.json'
+settingsFile = 'Game Engine\settings.json'
 
 def copyThatJson():
     with open(dataFile, 'r') as file:
