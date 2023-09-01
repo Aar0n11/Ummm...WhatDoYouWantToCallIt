@@ -15,6 +15,8 @@ path = parent + "/ground.png"
 
 columnWidth = 5
 
+array = []
+
 def raycast(columnpos, image):
     count = 0
 
@@ -23,7 +25,7 @@ def raycast(columnpos, image):
     for ray in range(areaHeight):
         ray[1] = ray[1] - 1
 
-        color = image.getpixel((ray))
+        color = image.getpixel(ray)
 
         if(color[2] == 1):
             count = count + 1
@@ -34,6 +36,8 @@ def main():
 
         for(i) in range(areaWidth):
             raycast(i/columnWidth, image)
+            array.append(count)
+            count = 0
     except IOError:
         pass
 

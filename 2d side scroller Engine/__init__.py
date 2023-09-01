@@ -7,3 +7,5 @@ with open("electron_installed.txt", "r") as file:
 with open("electron_installed.txt", "w") as file:
     file.truncate(0)
     file.write("True")
+
+subprocess.Popen("/Render Engine/Electron/RenderStart.bat")
