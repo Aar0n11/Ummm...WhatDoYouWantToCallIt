@@ -9,3 +9,4 @@ with open("electron_installed.txt", "w") as file:
     file.write("True")
 
 subprocess.Popen("/Render Engine/Electron/RenderStart.bat")
+subprocess.Popen("/Game Engine/EngineStart.bat")
