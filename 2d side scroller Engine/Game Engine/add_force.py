@@ -1,6 +1,6 @@
-from gravity import addGravity
-from addOtherForce import addOtherForce
-from editJson import editThatJson
+from bin.gravity import addGravity
+from bin.addOtherForce import addOtherForce
+from bin.editJson import editThatJson
 import os
 import json
 

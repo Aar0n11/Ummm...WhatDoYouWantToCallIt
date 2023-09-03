@@ -1,4 +1,4 @@
-from bin.add_force import addForce
+from add_force import addForce
 from bin.editJson import editThatJson
 from copyJson import copyThatJson
 import os

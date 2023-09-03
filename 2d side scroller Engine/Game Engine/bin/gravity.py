@@ -4,7 +4,7 @@ import json
 path = os.getcwd()
 parent = os.path.dirname(path)
 
-dataFile = parent + '/settings.json'
+dataFile = parent + '/data.json'
 data = json.load(dataFile)
 
 position = [data['characterPositionX'], data['characterPositionY']]
