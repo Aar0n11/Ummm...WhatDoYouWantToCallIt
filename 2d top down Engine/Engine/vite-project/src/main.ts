@@ -4,6 +4,7 @@ const moveBy = 10
 const character = document.getElementById("character")
 let charPos = [0, 0]
 let charSize = [Number(character!.style.width.replace("px", "")), Number(character!.style.height.replace("px", ""))]
+const constrained: boolean = true
 
 window.addEventListener('load', () => {
   character!.style.position = 'absolute'
@@ -33,18 +34,20 @@ document.addEventListener("keypress", (e) => {
       charPos[0] = Number(character!.style.left.replace("px", ""))
       break
     }
+  if(constrained === true) {
 
   if(charPos[0] < 0){
     character!.style.left = 0 + "px"
   }
-  if(charPos[0] > window.innerWidth){
-    character!.style.left = window.innerWidth - charSize[0] + 'px'
+  if(charPos[0] > window.innerWidth - 102){
+    character!.style.left = (window.innerWidth - 102) + 'px'
   }
-  if(charPos[1] > window.innerHeight){
-    character!.style.top = window.innerHeight - charSize[1] + 'px'
+  if(charPos[1] > window.innerHeight - 102){
+    character!.style.top = (window.innerHeight - 102) + 'px'
   }
   if(charPos[1] < 0){
     character!.style.top = 0 + 'px'
+  }
   }
   }
 )
