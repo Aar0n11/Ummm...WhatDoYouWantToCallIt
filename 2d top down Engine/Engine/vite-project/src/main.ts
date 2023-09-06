@@ -3,7 +3,6 @@ import './style.css'
 const moveBy = 10
 const character = document.getElementById("character")
 let charPos = [0, 0]
-let charSize = [Number(character!.style.width.replace("px", "")), Number(character!.style.height.replace("px", ""))]
 const constrained: boolean = true
 
 window.addEventListener('load', () => {
@@ -14,7 +13,7 @@ window.addEventListener('load', () => {
 
 document.addEventListener("keypress", (e) => {
   switch(e.key){
-    case 'w':
+    case (('w') || ('UpArrow')):
       character!.style.top = parseInt(character!.style.top) - moveBy + 'px'
       charPos[1] = Number(character!.style.top.replace('px', ''))
       break
