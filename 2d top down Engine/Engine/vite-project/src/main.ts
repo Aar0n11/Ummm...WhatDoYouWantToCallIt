@@ -35,18 +35,18 @@ document.addEventListener("keypress", (e) => {
     }
   if(constrained === true) {
 
-  if(charPos[0] < 0){
-    character!.style.left = 0 + "px"
-  }
-  if(charPos[0] > window.innerWidth - 102){
-    character!.style.left = (window.innerWidth - 102) + 'px'
-  }
-  if(charPos[1] > window.innerHeight - 102){
-    character!.style.top = (window.innerHeight - 102) + 'px'
-  }
-  if(charPos[1] < 0){
-    character!.style.top = 0 + 'px'
-  }
-  }
+    if(charPos[0] < 0){
+      character!.style.left = 0 + "px"
+    }
+    if(charPos[0] > window.innerWidth - 102){
+      character!.style.left = (window.innerWidth - 102) + 'px'
+    }
+    if(charPos[1] > window.innerHeight - 102){
+      character!.style.top = (window.innerHeight - 102) + 'px'
+    }
+    if(charPos[1] < 0){
+      character!.style.top = 0 + 'px'
+    }
+    }
   }
 )
